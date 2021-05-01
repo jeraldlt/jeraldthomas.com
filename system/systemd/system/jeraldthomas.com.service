@@ -1,0 +1,12 @@
+[Unit]
+Description=Gunicorn instance to serve jeraldthomas.com
+After=network.target
+
+[Service]
+User=jerald
+Group=www-data
+WorkingDirectory=/home/jerald/www/jeraldthomas.com
+ExecStart=/usr/local/bin/gunicorn --workers 3 --bind unix:jeraldthomas.com.sock -m 007 jeraldthomas_dot_com:app
+
+[Install]
+WantedBy=multi-user.target
