@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="main">
+    <div id="featured">
+
+        {% for category in bibs %}
+        <div class="title">
+            <h2>{{ category }}</h2>
+        </div>
+        <ul class="style1">
+            {% for bib in bibs[category] %}
+                <li class="first">
+                 <p class="date"><a href="#">{{ bib["month"] }}<b>{{ bib["year"] }}</b></a></p>
+                 <h3>{{ bib["title"] }}</h3>
+                    <p class="authors">{{ bib["author"] }}</p>
+                    {% if bib["notes"] %}
+                        <p><b>{{ bib["notes"] }}</b></p>
+                    {% endif %}
+
+                    {% if category == "Peer Reviewed Conference Posters" %}
+                        <p><a href="{{ url_for('show_bibtex', key=bib['ID']) }}">BibTex</a> | <a href="{{ url_for('static', filename='publications/' + bib['ID'] + '.pdf')}}" target="_new">Poster Abstract</a> | <a href="{{ url_for('static', filename='publications/' + bib['ID'] + '.png') }}" target="_new">Poster</a></p>
+                    {% else %}
+                        <p><a href="{{ url_for('show_bibtex', key=bib['ID']) }}">BibTex</a> | <a href="{{ url_for('static', filename='publications/' + bib['ID'] + '.pdf') }}" target="_new">Paper</a></p>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="main">
+    <div id="featured">
+        <div class="title">
+            <h2>Projects</h2>
+    </div>
+
+    <p>Here is a list of my more recent projects, all of which are either open source or public domain. None of these projects are currently in a "release" state, and as such they should all be treated as buggy and incomplete.</p>
+    <ul class="style1">
+        <li class="first">
+	        <h3>Flame (Free Linux AVR Microcontroller Emulator)</h3>
+            <p>Flame is my attempt at learning how emulators are designed and implemented. The goal of Flame is that it will find a usecase with hobbiests, professionals, and educators alike. Flame is currently in active development, with several bugs and missing features.</p>
+            <p><a href="https://www.bitbucket.org/jeraldlt/flame.git">Git Repository</a></p>
+        </li>
+        <li>
+	        <h3>LibRDW</h3>
+            <p>Redirected walking (RDW) is a type of natural locomotion interface for immersive virtual reality. Currently several algorithms exist, each suited for a particular type of experience, but currently if a developer wants to use a RDW algorithm in their VR experience they need to find the research paper and implement the algorithm from scratch. LibRDW is an attempt to create a central library where RDW algorithms can be implemented. LibRDW is written in C so it can be ported to as many systems as possible, and wrappers are currently implemented for C++, Python, and C#.</p>
+            <p><a href="https://www.bitbucket.org/jeraldlt/librdw.git">Git Repository</a></p>
+        </li>
+        <li>
+	        <h3>RedSim</h3>
+            <p>RedSim is a lightweight redirected walking (RDW) simulator built on Python (and Pygame) and using the LibRDW library.</p>
+            <p><a href="https://www.bitbucket.org/jeraldlt/redsim.git">Git Repository</a></p>
+        </li>
+        <li>
+            <h3>2018 IEEE VR 3DUI Contest</h3>
+            <p>Our Unity project for the 2018 IEEE VR 3DUI Contest. Our team ultimately decided not to comptete, but here is our project anyway.</p>
+            <p><a href="https://www.bitbucket.org/jeraldlt/3dui-contest_ladder.git">Git Repository</a></p>
+        </li>
+    </ul>
+</div>
+{% endblock %}

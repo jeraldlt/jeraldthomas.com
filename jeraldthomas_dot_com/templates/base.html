@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Skeleton 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20130902
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Jerald Thomas</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="{{ url_for('static', filename='style/default.css') }}" rel="stylesheet" type="text/css" media="all" />
+<link href="{{ url_for('static', filename='style/fonts.css') }}" rel="stylesheet" type="text/css" media="all" />
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+<div id="page" class="container">
+	<div id="header">
+		<div id="logo">
+			<img src="{{ url_for('static', filename='images/headshot.jpg') }}" alt="headshot" />
+			<h1><a href="#">Jerald Thomas</a></h1>
+			<span>Computer Science PhD Candidate</a></span>
+		</div>
+		<div id="menu">
+			<ul>
+                {% if current_page == 'index' %}
+				    <li class="current_page_item"><a href="{{ url_for('index') }}" accesskey="1" title="">About Me</a></li>
+				{% else %}
+                    <li><a href="{{ url_for('index') }}" accesskey="1" title="">About Me</a></li>
+				{% endif %}
+
+				{% if current_page == 'publications' %}
+				    <li class="current_page_item"><a href="{{ url_for('publications') }}" accesskey="2" title="">Publications</a></li>
+				{% else %}
+                    <li><a href="{{ url_for('publications') }}" accesskey="2" title="">Publications</a></li>
+				{% endif %}
+
+				{% if current_page == 'projects' %}
+                    <li class="current_page_item"><a href="{{ url_for('projects') }}" accesskey="3" title="">Projects</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('projects') }}" accesskey="3" title="">Projects</a></li>
+                {% endif %}
+                
+				<li><a href="files/JeraldThomas_CV.pdf" target="_new" accesskey="4" title="">Curriculum Vitae</a></li>
+				<li><a href="https://scholar.google.com/citations?user=XEe7qlQAAAAj" target="_new" accesskey="5">Google Scholar</a></li>
+			</ul>
+			<div id="copyright">
+                <span>&copy; 2021 Jerald Thomas</span>
+                <span>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a></span>
+            </div>
+		</div>
+	</div>
+	
+	{% block content %}{% endblock %}
+		
+	
+</div>
+</body>
+</html>
