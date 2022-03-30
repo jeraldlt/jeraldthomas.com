@@ -12,6 +12,9 @@ def publications():
     with open('jeraldthomas_dot_com/static/publications/references.bib') as bibtex_file:
         bibs = bibtexparser.load(bibtex_file)
 
+    for bib in bibs.entries:
+        bib["author"] = " and ".join(["<b>"+x+"</b>" if "Jerald" in x else x for x in bib["author"].split(" and ")])
+
     sorted_bibs = {
         "Peer Reviewed Conference and Journal Papers": [],
         "Peer Reviewed Conference Workshop Papers": [],

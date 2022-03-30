@@ -12,7 +12,7 @@
                 <li class="first">
                  <p class="date"><a href="#">{{ bib["month"] }}<b>{{ bib["year"] }}</b></a></p>
                  <h3>{{ bib["title"] }}</h3>
-                    <p class="authors">{{ bib["author"] }}</p>
+                    <p class="authors">{{ bib["author"]|safe }}</p>
                     {% if bib["notes"] %}
                         <p><b>{{ bib["notes"] }}</b></p>
                     {% endif %}
