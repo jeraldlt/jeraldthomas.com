@@ -1,9 +1,11 @@
 from flask import render_template, url_for
-from jeraldthomas_dot_com import app
+
+from jeraldthomas_dot_com import app, analytics
 
 import bibtexparser
 
 @app.route('/')
+@analytics.log_views
 def index():
     return render_template('index.html', current_page='index')
 
