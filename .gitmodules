@@ -1,0 +1,3 @@
+[submodule "jeraldthomas_dot_com/static/ApplicationMaterials"]
+	path = jeraldthomas_dot_com/static/ApplicationMaterials
+	url = git@github.com:jeraldlt/ApplicationMaterials.git
